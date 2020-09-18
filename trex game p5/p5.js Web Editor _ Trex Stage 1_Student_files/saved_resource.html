@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- saved from url=(0012)about:srcdoc -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.js" crossorigin=""></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.dom.min.js" crossorigin=""></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.sound.min.js" crossorigin=""></script>
+<script src="https://assets.editor.p5js.org/5c5bc37c07d9ce001edcb109/25d5c732-104f-4489-85a7-d7de23fc60d1.js" crossorigin=""></script>
+    
+    
+
+  <!--<base href="https://editor.p5js.org/whitehatjr/sketches/d0CVnG8wJ/">--><base href="."><style>
+html, body {
+  margin: 0;
+  padding: 0;
+}
+canvas {
+  display: block;
+}
+</style><script src="https://editor.p5js.org/previewScripts.js"></script><style data-emotion=""></style><script>
+    function getScriptOff(line) {
+      var offs = [[56,"sketch"]];
+      var l = 0;
+      var file = '';
+      for (var i=0; i<offs.length; i++) {
+        var n = offs[i][0];
+        if (n < line && n > l) {
+          l = n;
+          file = offs[i][1];
+        }
+      }
+      return [line - l, file];
+    }
+    // catch reference errors, via http://stackoverflow.com/a/12747364/2994108
+    window.onerror = function (msg, url, lineNumber, columnNo, error) {
+        var string = msg.toLowerCase();
+        var substring = "script error";
+        var data = {};
+        if (url.match(/^(http:\/\/|https:\/\/)/) !== null && error.stack){
+          var errorNum = error.stack.split('about:srcdoc:')[1].split(':')[0];
+          var fileInfo = getScriptOff(errorNum);
+          data = msg + ' (' + fileInfo[1] + ': line ' + fileInfo[0] + ')';
+        } else {
+          var fileInfo = getScriptOff(lineNumber);
+          data = msg + ' (' + fileInfo[1] + ': line ' + fileInfo[0] + ')';
+        }
+        window.parent.postMessage([{
+          log: [{
+            method: 'error',
+            data: [data],
+            id: Date.now().toString()
+          }],
+          source: fileInfo[1]
+        }], '*');
+      return false;
+    };
+  </script></head>
+  <body>
+      <script data-tag="@fs-sketch.js">var trex,trexrunning;
+function preload(){
+trexrunning=loadAnimation("https://assets.editor.p5js.org/5c5bc37c07d9ce001edcb109/ad3f6cab-f28c-4b3b-b9ab-564b42ab537b.png","https://assets.editor.p5js.org/5c5bc37c07d9ce001edcb109/7882ab9d-8cb1-4850-b71b-2c21882d3f68.png","https://assets.editor.p5js.org/5c5bc37c07d9ce001edcb109/c150f0d9-6c6b-4648-b1a4-d6cd395555d1.png");
+
+
+}
+function setup() {
+  createCanvas(500,400);
+  trex=createSprite(50,370,40,40);
+  trex.addAnimation("trexrunning",trexrunning);
+  trex.scale=0.5;
+ // trex.velocityY = -10;
+}
+ function draw(){
+ background(220);
+   
+if(keyDown("space")){ 
+ trex.velocityY=-10;
+ }
+
+  drawSprites()
+ }</script>
+  
+
+<canvas id="defaultCanvas0" class="p5Canvas" width="500" height="400" style="width: 500px; height: 400px;"></canvas></body></html>
